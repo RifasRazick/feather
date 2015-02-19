@@ -121,10 +121,13 @@ namespace Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Layouts
             var isBackendRequest = true;
             var currentContext = SystemManager.CurrentHttpContext;
 
+            var markupServiceUrlIdentifier = "/markup/pages";
+            var isPagesPrecompilationRequest = SystemManager.CurrentHttpContext.Request.Url.AbsolutePath.EndsWith(markupServiceUrlIdentifier, StringComparison.OrdinalIgnoreCase);
+
             if (currentContext.Items.Contains("IsBackendRequest"))
                 isBackendRequest = (bool)currentContext.Items["IsBackendRequest"];
 
-            if (!isBackendRequest && currentContext.Items.Contains("ServedPageNode") && currentContext.Items["ServedPageNode"] is PageSiteNode)
+            if ((!isBackendRequest || isPagesPrecompilationRequest) && currentContext.Items.Contains("ServedPageNode") && currentContext.Items["ServedPageNode"] is PageSiteNode)
             {
                 var servedPageNode = currentContext.Items["ServedPageNode"] as PageSiteNode;
 
