@@ -9,7 +9,6 @@ namespace Telerik.Sitefinity.Frontend.TestIntegration.ResourcePackages
     {
         public const string LayoutFileResource = "Telerik.Sitefinity.Frontend.TestUtilities.Data.TestLayout.cshtml";
         public const string PackageResource = "Telerik.Sitefinity.Frontend.TestUtilities.Data.TestPackage.zip";
-        public const string PackageResource2 = "Telerik.Sitefinity.Frontend.TestUtilities.Data.TestPackage2.zip";
         public const string PackageNoLayoutsResource = "Telerik.Sitefinity.Frontend.TestUtilities.Data.TestPackageNoLayouts.zip";
         public const string PackageName = "Foundation";
         public const string TestPackageName = "TestPackage";
@@ -34,8 +33,5 @@ namespace Telerik.Sitefinity.Frontend.TestIntegration.ResourcePackages
         public const string TestLayout1TemplateText = "Test Layout 1";
         public const string TestLayout1TemplateTextEdited = "New Text";
         public const string ServerErrorMessage = "Server Error";
-        public const string TemplateTestLayout12 = "TestPackage2.Test Layout 1";
-        public const string TemplateTestLayout22 = "TestPackage2.Test Layout 2";
-        public const string TemplateTestLayout32 = "TestPackage2.Test Layout 3";
     }
 }
