@@ -85,8 +85,8 @@ namespace Telerik.Sitefinity.Frontend.TestIntegration.ResourcePackages
             string packageResource2 = "Telerik.Sitefinity.Frontend.TestUtilities.Data.TestPackage2.zip";
             string packageName = "TestPackage2";
             string newPackageName = "NewTestPackage2";
-            string templateLayoutName = "TestPackage2.Test Layout 1";
-            string newTemplateLayoutName = "NewTestPackage2.Test Layout 1";
+            string templateLayoutName = "TestPackage2.test-layout-1";
+            string newTemplateLayoutName = "NewTestPackage2.test-layout-1";
             int templatesCount = this.PageManager.GetTemplates().Count();
 
             try
