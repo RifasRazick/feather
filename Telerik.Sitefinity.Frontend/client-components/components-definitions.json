@@ -266,6 +266,16 @@
 },
 
 
+"_____LISTS_____": { "scripts": [ ], "components": [ ] },
+
+"sf-lists-selector" : {
+	"scripts" : [
+        "client-components/selectors/lists/sf-lists-selector.js",
+        "client-components/selectors/lists/sf-lists-service.js"
+	],
+	"components" : ["sf-services", "sf-items-filter", "sf-endless-scroll", "sf-list-selector", "sf-loading", "sf-selected-items-view"]
+},
+
 "_____LOCALIZATION_____" : {"scripts" : [], "components" : []},
 
 
