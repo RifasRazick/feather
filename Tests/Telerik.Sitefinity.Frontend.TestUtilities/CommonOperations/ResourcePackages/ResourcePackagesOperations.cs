@@ -189,17 +189,19 @@ namespace Telerik.Sitefinity.Frontend.TestUtilities.CommonOperations
         /// </summary>
         /// <param name="primaryCount">The primary templates count.</param>
         /// <param name="increment">The increase number.</param>
-        public void WaitForTemplatesCountToIncrease(int primaryCount, int increment)
+        public bool WaitForTemplatesCountToIncrease(int primaryCount, int increment)
         {
             PageManager pageManager = PageManager.GetManager();
 
-            for (int i = 50; i > 0; --i)
+            for (int i = 120; i > 0; --i)
             {
                 if (pageManager.GetTemplates().Count() == primaryCount + increment)
-                    break;
+                    return true;
 
                 Thread.Sleep(TimeSpan.FromSeconds(1));
             }
+
+            return false;
         }
 
         /// <summary>
