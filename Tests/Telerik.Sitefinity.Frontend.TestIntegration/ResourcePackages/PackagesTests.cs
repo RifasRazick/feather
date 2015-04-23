@@ -300,11 +300,17 @@ namespace Telerik.Sitefinity.Frontend.TestIntegration.ResourcePackages
 
             int templatesCount = this.PageManager.GetTemplates().Count();
 
+            Console.WriteLine(templatesCount);
+
             try
             {
                 // Add new package to the file system
                 FeatherServerOperations.ResourcePackages().AddNewResourcePackage(packageResource);
-                Assert.IsTrue(FeatherServerOperations.ResourcePackages().WaitForTemplatesCountToIncrease(templatesCount, 1), "Template count is not increased.");
+                FeatherServerOperations.ResourcePackages().WaitForTemplatesCountToIncrease(templatesCount, 1);
+
+                templatesCount = this.PageManager.GetTemplates().Count();
+
+                Console.WriteLine(templatesCount);
 
                 // Verify template is generated successfully
                 var template = this.PageManager.GetTemplates().Where(t => t.Title == templateTitle).FirstOrDefault();
