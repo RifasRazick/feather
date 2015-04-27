@@ -177,7 +177,7 @@
     <Compile Include="ResourcePackages\Constants.cs" />
     <Compile Include="ResourcePackages\LayoutFilesTests.cs" />
     <Compile Include="ResourcePackages\PackagesTests.cs" />
-    <Compile Include="ResourcePackages\ResourcePackagesRenameTemplateTests.cs" />
+    <Compile Include="ResourcePackages\ResourcePackagesTests.cs" />
     <Compile Include="TestCategories.cs" />
   </ItemGroup>
   <ItemGroup>
