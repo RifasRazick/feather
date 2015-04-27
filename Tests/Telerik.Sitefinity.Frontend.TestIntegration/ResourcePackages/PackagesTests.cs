@@ -288,15 +288,15 @@ namespace Telerik.Sitefinity.Frontend.TestIntegration.ResourcePackages
             string pageName2 = "FeatherPage2";
             string widgetCaption = "TestMvcWidget";
             string placeHolderId = "Body";
-            string packageName = "Package1";
+            string packageName = "SomePackage";
             string viewFileName = "Default.cshtml";
             string widgetName = "MvcTest";
             string fileResource = "Telerik.Sitefinity.Frontend.TestUtilities.Data.Default.cshtml";
-            string packageResource = "Telerik.Sitefinity.Frontend.TestUtilities.Data.Package1.zip";
-            string templateTitle = "Package1.test-layout";
+            string packageResource = "Telerik.Sitefinity.Frontend.TestUtilities.Data.SomePackage.zip";
+            string templateTitle = "SomePackage.test-layout";
             string viewText = "This is a view from package.";
-            string layoutText = "Package1 - test layout";
-            string templateRenamed = "Package1.TemplateRenamed";
+            string layoutText = "SomePackage - test layout";
+            string templateRenamed = "SomePackage.TemplateRenamed";
 
             int templatesCount = this.PageManager.GetTemplates().Count();
 
@@ -304,9 +304,10 @@ namespace Telerik.Sitefinity.Frontend.TestIntegration.ResourcePackages
             {
                 // Add new package to the file system
                 FeatherServerOperations.ResourcePackages().AddNewResourcePackage(packageResource);
-                FeatherServerOperations.ResourcePackages().WaitForTemplatesCountToIncrease(templatesCount, 1);
 
-                Assert.AreEqual(templatesCount + 1, this.PageManager.GetTemplates().Count());
+                ServerOperations.SystemManager().RestartApplication(false);
+
+                Assert.IsTrue(FeatherServerOperations.ResourcePackages().WaitForTemplatesCountToIncrease(templatesCount, 1), "Template is not created successfully, after adding the file.");
 
                 // Verify template is generated successfully
                 var template = this.PageManager.GetTemplates().Where(t => t.Title == templateTitle).FirstOrDefault();
