@@ -342,12 +342,12 @@ namespace Telerik.Sitefinity.Frontend.TestIntegration.ResourcePackages
             }
             finally
             {
-                string path = FeatherServerOperations.ResourcePackages().GetResourcePackagesDestination(packageName);
+                //// string path = FeatherServerOperations.ResourcePackages().GetResourcePackagesDestination(packageName);
 
                 ServerOperations.Pages().DeleteAllPages();
                 ServerOperations.Templates().DeletePageTemplate(templateRenamed);
                 ServerOperations.Templates().DeletePageTemplate(templateTitle);              
-                FeatherServerOperations.ResourcePackages().DeleteDirectory(path);
+                //// FeatherServerOperations.ResourcePackages().DeleteDirectory(path);
             }
         }
 
