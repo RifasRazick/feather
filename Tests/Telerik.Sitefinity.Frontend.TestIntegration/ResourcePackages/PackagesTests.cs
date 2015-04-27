@@ -305,6 +305,7 @@ namespace Telerik.Sitefinity.Frontend.TestIntegration.ResourcePackages
                 // Add new package to the file system
                 FeatherServerOperations.ResourcePackages().AddNewResourcePackage(packageResource);
 
+                // Adding system restart since the test is not passing, but the issue is not reproducible manually.
                 ServerOperations.SystemManager().RestartApplication(false);
 
                 Assert.IsTrue(FeatherServerOperations.ResourcePackages().WaitForTemplatesCountToIncrease(templatesCount, 1), "Template is not created successfully, after adding the file.");
