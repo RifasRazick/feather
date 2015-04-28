@@ -205,6 +205,26 @@ namespace Telerik.Sitefinity.Frontend.TestUtilities.CommonOperations
         }
 
         /// <summary>
+        /// Waits for templates count to increase.
+        /// </summary>
+        /// <returns>True or false depending on the increased count.</returns>
+        public bool WaitForTemplatesCountToIncrease()
+        {
+            PageManager pageManager = PageManager.GetManager();
+            var primaryCount = pageManager.GetTemplates().Count();
+
+            for (int i = 120; i > 0; --i)
+            {
+                if (pageManager.GetTemplates().Count() > primaryCount)
+                    return true;
+
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+            }
+
+            return false;
+        }
+
+        /// <summary>
         /// Edit a layout file content
         /// </summary>
         /// <param name="layoutFile">The layout file path.</param>
