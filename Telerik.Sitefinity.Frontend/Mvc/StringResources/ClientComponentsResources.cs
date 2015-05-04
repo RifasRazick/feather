@@ -2954,5 +2954,37 @@ namespace Telerik.Sitefinity.Frontend.Mvc.StringResources
                 return this["UserSelectorHeader"];
             }
         }
+
+        /// <summary>
+        /// phrase: Name
+        /// </summary>
+        /// <value>Name</value>
+        [ResourceEntry("Name",
+            Value = "Name",
+            Description = "phrase: Name",
+            LastModified = "2015/04/09")]
+        public string Name
+        {
+            get
+            {
+                return this["Name"];
+            }
+        }
+
+        /// <summary>
+        /// phrase: User Name
+        /// </summary>
+        /// <value>Name</value>
+        [ResourceEntry("UserName",
+            Value = "User Name",
+            Description = "phrase: User Name",
+            LastModified = "2015/04/09")]
+        public string UserName
+        {
+            get
+            {
+                return this["UserName"];
+            }
+        }
     }
 }

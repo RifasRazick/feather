@@ -33,6 +33,17 @@
                     <sf-items-filter sf-filter='filter'></sf-items-filter>
                 </div>
             
+            
+                <div class="list-group-endless">
+                  <div style="float:left; width:50%">
+                     @(Res.Get<ClientComponentsResources>().Name)
+                    
+                  </div>
+                  <div style="float:right; width:50%">
+                     @(Res.Get<ClientComponentsResources>().UserName)
+                  </div>
+                </div>
+            
                 <div sf-endless-scroll sf-paging='paging' class="list-group list-group-endless">
                     <div ng-repeat="item in items"
                          ng-class="{'list-group-item': true, 'active': isItemSelectedInDialog(item), 'list-group-item-multiselect' : multiselect }"
@@ -41,7 +52,9 @@
 
                         <input type="checkbox" ng-checked="isItemSelectedInDialog(item)" ng-show="multiselect">
 
-                        <div ng-bind="bindIdentifierField(item)"></div>
+                        <div ng-bind="bindIdentifierField(item)" style="float:left; width:50%"></div>
+
+                        <div ng-bind="item.DisplayName" style="float:right; width:50%"></div>
                     </div>
                 </div>
                 <div ng-hide="items.length || showLoadingIndicator"><i>@(Res.Get<ClientComponentsResources>().NoItemsFound)</i></div>
